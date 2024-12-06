@@ -4,7 +4,7 @@ import javax.swing.*;
 /**
  * Tic-Tac-Toe: Two-player Graphics version with Simple-OO in one class
  */
-public class TTT extends JFrame {
+public class TTTGraphics extends JFrame {
     private static final long serialVersionUID = 1L; // to prevent serializable warning
 
     // Define named constants for the game board
@@ -48,7 +48,7 @@ public class TTT extends JFrame {
     private JLabel statusBar;  // Status Bar
 
     /** Constructor to setup the game and the GUI components */
-    public TTT() {
+    public TTTGraphics() {
         // Initialize the game objects
         initGame();
 
@@ -67,10 +67,6 @@ public class TTT extends JFrame {
                 int col = mouseX / CELL_SIZE;
 
                 if (currentState == State.PLAYING) {
-                    if(currentPlayer == Seed.CROSS){
-                        SoundEffect.EAT_FOOD.play();
-                    }
-
                     if (row >= 0 && row < ROWS && col >= 0
                             && col < COLS && board[row][col] == Seed.NO_SEED) {
                         // Update board[][] and return the new game state after the move
@@ -79,9 +75,6 @@ public class TTT extends JFrame {
                         currentPlayer = (currentPlayer == Seed.CROSS) ? Seed.NOUGHT : Seed.CROSS;
                     }
                 } else {       // game over
-                    if(currentPlayer == Seed.CROSS){
-                        SoundEffect.DIE.play();
-                    }
                     newGame(); // restart the game
                 }
                 // Refresh the drawing canvas
@@ -231,7 +224,7 @@ public class TTT extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new TTT(); // Let the constructor do the job
+                new TTTGraphics(); // Let the constructor do the job
             }
         });
     }
