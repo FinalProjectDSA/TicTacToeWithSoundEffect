@@ -13,6 +13,10 @@ public class Board {
     public static final int GRID_WIDTH_HALF = GRID_WIDTH / 2; // Grid-line's half-width
     public static final Color COLOR_GRID = Color.LIGHT_GRAY;  // grid lines
     public static final int Y_OFFSET = 1;  // Fine tune for better display
+    public static final int dummy = 1;
+
+
+
 
 
     // Define properties (package-visible)
