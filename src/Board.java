@@ -17,6 +17,7 @@ public class Board {
 
 
 
+
     // Define properties (package-visible)
     /** Composes of 2D array of ROWS-by-COLS Cell instances */
     Cell[][] cells;
